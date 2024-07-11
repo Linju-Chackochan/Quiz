@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+
+<body>
+    <div id="question">
+
+
+    </div>
+
+</body>
+<script src="./quizdata.js"></script>
+<script>
+
+
+     async function getExamData(){           //asynchronous function
+         let data;
+         let link='https://andruxnet-random-famous-quotes.p.rapidapi.com';         //put the link so that datas are accessed from the said link
+         fetch(link).then((value)=>{
+             console.log(value)
+             return value.json();    //converting string to json 
+         }).then((valueB)=>{
+             console.table(quizData);
+         });
+     }
+     getExamData();
+     let time=0;
+     function timerFn(){
+         setInterval(()=>{
+             time++;
+             console.log(time)
+         },5000);         //   1second=1000ms(interval=5000s)
+     }
+     timerFn();
+
+
+    async function getExamData(){           //asynchronous function
+        let data;
+        let link="https://opentdb.com/api.php?amount=10";       //put the link so that datas are accessed from the said link
+        fetch(link).then((value)=>{
+            console.table(value);
+              //converting string to json 
+        });
+    }
+    getExamData();
+
+
+    async function getExamData() {
+        // var question = document.getElementById('question');         //asynchronous function
+        let link = "https://dreamthemonline.com/sample/getNewQuizData/600";       //put the link so that datas are accessed from the said link
+        fetch(link).then((value) => {
+            // question.innerText = value.json();
+            return value.json();
+        }).then((valueB)=>{
+                console.table(valueB);
+
+        })
+    }
+    getExamData();
+
+
+
+
+
+
+
+
+</script>
+
+</html>
